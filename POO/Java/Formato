@@ -1,0 +1,43 @@
+import java.util.Scanner;
+class Formato{
+	public static void main (String[] args){
+		Scanner reader = new Scanner(System.in);
+		System.out.println("O que deseja fazer? (Um; Varios; Dado; Limite; Min e Max; Exit)")
+		String resp = reader.nextString();
+		sit = resp.equals("Exit");
+		while  (sit == false){
+			if (resp.equals("Um") or resp.equals("um")){
+				RandomTester num1 = new RandomTester();
+				System.out.println("Um aleatorio: "+ num1.printOneRandom()); 	
+			}
+			
+			if (resp.equals("Varios") or resp.equals("varios")){
+				RandomTester num2 = new RandomTester();
+				System.out.print("Qts aleatorios: "); 
+				int many = reader.nextInt();
+				num2.printMultiRandom(many);	
+			}
+			
+			if (resp.equal("dado")){
+				RandomTester num3 = new RandomTester();
+				System.out.println("Girando o dado..."+ num3.throwDice());
+			}
+			
+			if (resp.equals("limite")){
+				RandomTester num4 = new RandomTester();
+				System.out.print("Um aleatorio ate quanto? ");
+				int max = reader.nextInt();
+				System.out.println(num4.throwMax(max));	
+			}
+			
+			if (resp.equals("min e max")){
+				RandomTester num5 = new RandomTester();
+				System.out.print("Um aleatorio de quanto ate quanto? ");
+				int maxi = reader.nextInt();
+				int mini = reader.nextInt();
+				System.out.println(num5.throwMinMax(mini, maxi));
+			}
+		}
+      
+   }
+ }
